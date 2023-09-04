@@ -1,0 +1,54 @@
+#!/usr/bin/env python
+
+"""
+
+Enunciado: Diseña una clase Libro que represente un libro con título, autor y número de páginas. Además, crea una clase Biblioteca que almacene múltiples libros y permita agregar y buscar libros por título y autor.
+
+"""
+
+
+class Libro:
+    def __init__(self, titulo, autor, pag):
+        self.titulo = titulo
+        self.autor = autor
+        self.pag = pag
+
+class Biblioteca:
+    def __init__(self):
+        self.libros = []
+    
+    def addLibro(self, libro):
+        self.libros.append(libro)
+    
+    def buscarLibro(self, entrada):
+        
+        for libro in self.libros:
+            respuesta = f"{libro.titulo} {libro.autor}"
+            
+            if entrada.lower() in libro.titulo.lower():
+                return respuesta
+        
+            elif entrada.lower() in str(libro.autor):
+                return respuesta
+    
+    def listaLibros(self):
+        for libro in self.libros:
+            print(f"Título: {libro.titulo}")
+            print(f"Autor: {libro.autor}")
+            print(f"Número de páginas: {libro.pag}")
+            print("\n")
+
+Book = Libro("AutoBiografia", "Elliott", 300)
+Book2 = Libro("EsternoCleidoa", "okei?", 10)
+Book3 = Libro("Patata", "yo mero", 20)
+
+MaxiBookz = Biblioteca()
+
+MaxiBookz.addLibro(Book)
+MaxiBookz.addLibro(Book2)
+MaxiBookz.addLibro(Book3)
+
+print(
+    # MaxiBookz.buscarLibro("a")
+    MaxiBookz.listaLibros()
+    )
