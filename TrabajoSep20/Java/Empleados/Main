@@ -1,0 +1,75 @@
+class Empleado {
+    private String nombre;
+    private int edad;
+    private double salario;
+
+    public Empleado(String nombre, int edad, double salario) {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.salario = salario;
+    }
+
+    public String describirRol() {
+        return "Soy un empleado.";
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public double getSalario() {
+        return salario;
+    }
+}
+
+class Gerente extends Empleado {
+    private String departamento;
+
+    public Gerente(String nombre, int edad, double salario, String departamento) {
+        super(nombre, edad, salario);
+        this.departamento = departamento;
+    }
+
+    @Override
+    public String describirRol() {
+        return "Soy un gerente llamado " + getNombre() + ", tengo " + getEdad() + " años y trabajo en el departamento de " + departamento + ". Mi salario es $" + getSalario() + ".";
+    }
+}
+
+class Ingeniero extends Empleado {
+    private String especialidad;
+
+    public Ingeniero(String nombre, int edad, double salario, String especialidad) {
+        super(nombre, edad, salario);
+        this.especialidad = especialidad;
+    }
+
+    @Override
+    public String describirRol() {
+        return "Soy un ingeniero llamado " + getNombre() + ", tengo " + getEdad() + " años y mi especialidad es " + especialidad + ". Mi salario es $" + getSalario() + ".";
+    }
+}
+
+class Asistente extends Empleado {
+    private String jefe;
+
+    public Asistente(String nombre, int edad, double salario, String jefe) {
+        super(nombre, edad, salario);
+        this.jefe = jefe;
+    }
+
+    @Override
+    public String describirRol() {
+        return "Soy un asistente llamado " + getNombre() + ", tengo " + getEdad() + " años y asisto a " + jefe + ". Mi salario es $" + getSalario() + ".";
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        
+    }
+}

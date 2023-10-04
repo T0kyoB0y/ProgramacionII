@@ -13,7 +13,7 @@ public class Main {
 
         // Ahora usamos de nuevo el getter
         System.out.println(basura1.getBasura());
-
+        
     
     }
 
